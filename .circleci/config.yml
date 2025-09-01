@@ -13,6 +13,7 @@ jobs:
       - checkout
 
   build_docker_image:
+    machine: true
     executor: docker-executor
     steps:
       - checkout
