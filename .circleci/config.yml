@@ -27,8 +27,8 @@ jobs:
       - run:
           name: Build and Push Image
           command: |
-              docker build -t us-central1-docker.pkg.dev/$GOOGLE_PROJECT_ID/llmops-repo/llmops-celeb-detector-repo:latest .
-              docker push us-central1-docker.pkg.dev/$GOOGLE_PROJECT_ID/llmops-repo/llmops-celeb-detector-repo:latest
+              docker build -t us-central1-docker.pkg.dev/$GOOGLE_PROJECT_ID/llmops-celeb-detector-repo:latest .
+              docker push us-central1-docker.pkg.dev/$GOOGLE_PROJECT_ID/llmops-celeb-detector-repo:latest
 
   deploy_to_gke:
     executor: docker-executor
