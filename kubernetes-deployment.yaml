@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: llmops-celeb-detector-repo
+  name: llmops-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: llmops-celeb-detector-repo
+      app: llmops-app
   template:
     metadata:
       labels:
-        app: llmops-celeb-detector-repo
+        app: llmops-app
     spec:
       containers:
-      - name: llmops-celeb-detector-repo
+      - name: llmops-app
         image: us-central1-docker.pkg.dev/atomic-horizon-464016-q9/llmops-celeb-detector-repo
         ports:
         - containerPort: 5000
@@ -32,7 +32,7 @@ metadata:
   name: llmops-service
 spec:
   selector:
-    app: llmops-celeb-detector-repo
+    app: llmops-app
   ports:
     - protocol: TCP
       port: 80

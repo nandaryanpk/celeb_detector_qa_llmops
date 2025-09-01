@@ -27,8 +27,8 @@ jobs:
       - run:
           name: Build and Push Image
           command: |
-              docker build -t us-central1-docker.pkg.dev/$GOOGLE_PROJECT_ID/llmops-celeb-detector-repo/llmops-celeb-detector-repo:latest .
-              docker push us-central1-docker.pkg.dev/$GOOGLE_PROJECT_ID/llmops-celeb-detector-repo/llmops-celeb-detector-repo:latest
+              docker build -t us-central1-docker.pkg.dev/$GOOGLE_PROJECT_ID/llmops-celeb-detector-repo/llmops-app:latest .
+              docker push us-central1-docker.pkg.dev/$GOOGLE_PROJECT_ID/llmops-celeb-detector-repo/llmops-app:latest
 
   deploy_to_gke:
     executor: docker-executor
@@ -50,7 +50,7 @@ jobs:
           name: Deploy to GKE
           command: |
               kubectl apply -f kubernetes-deployment.yaml --validate=false
-              kubectl rollout restart deployment llmops-celeb-detector-repo
+              kubectl rollout restart deployment llmops-app
 
 workflows:
   version: 2
