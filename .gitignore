@@ -1,3 +1,5 @@
 venv/
 .env
 celeb_detector_app.egg-info/
+gcp-key.json
+text.txt
